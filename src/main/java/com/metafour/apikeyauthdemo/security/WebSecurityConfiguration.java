@@ -32,7 +32,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private ApiPatternRepository apiPatternRepository;
 	
-	@Value("${apikeyauthdemo.apikey.header:ApiKey}")
+	@Value("${apikeyauth.header:ApiKey}")
 	private String apiKeyHeader;
 	
 	@Bean

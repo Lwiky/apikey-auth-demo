@@ -8,8 +8,11 @@ import org.springframework.security.core.userdetails.User;
 import com.metafour.apikeyauthdemo.entity.ApiKey;
 
 public class ApiKeyUtils {
-	public static ApiKey getPrincipal() {
+	public static synchronized ApiKey getPrincipal() {
 		User u = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		if (u == null || u.getUsername() == null || u.getUsername().isEmpty()) return null;
+		
 		ApiKey apiKey = new ApiKey();
 		
 		apiKey.setKey(u.getUsername());

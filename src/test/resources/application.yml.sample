@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/apikeyauthdemo
+    username: nadim
+    password: nadim
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+apikeyauthdemo:
+  header: ApiKey
